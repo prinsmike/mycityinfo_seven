@@ -15,6 +15,10 @@ function mycityinfo_seven_select($variables) {
  * @return string 
  */
 function mycityinfo_seven_form_select_options($element, $choices = NULL) {
+  $show_sa = array(
+    '/node/add/simpleads',
+    );
+
   if (!isset($choices)) {
     $choices = $element['#options'];
   }
@@ -40,7 +44,7 @@ function mycityinfo_seven_form_select_options($element, $choices = NULL) {
       else {
         $selected = '';
       }
-      if (check_plain($choice) === 'South Africa') {
+      if (check_plain($choice) === 'South Africa' && !in_array(current_path(), $show_sa)) {
       	$options .= '<option class="' . drupal_clean_css_identifier($key) . '"  value="' . check_plain($key) . '"' . $selected . ' data-hidden="true">' . check_plain($choice) . '</option>';
       } else { 
       	$options .= '<option class="' . drupal_clean_css_identifier($key) . '"  value="' . check_plain($key) . '"' . $selected . '>' . check_plain($choice) . '</option>';
