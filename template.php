@@ -15,11 +15,19 @@ function mycityinfo_seven_select($variables) {
  * @return string 
  */
 function mycityinfo_seven_form_select_options($element, $choices = NULL) {
-  dsm($element);
   $show_sa = array(
     'node/add/simpleads',
     'node/add/advertisement',
     );
+
+  if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) == 'edit') {
+    $nid = arg(1);
+    $node = node_load($nid);
+    dsm($node->type);
+    if ($node->type == 'advertisement') {
+      $show_sa->append(current_path());
+    }
+  }
 
   if (!isset($choices)) {
     $choices = $element['#options'];
