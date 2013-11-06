@@ -17,6 +17,7 @@ function mycityinfo_seven_select($variables) {
 function mycityinfo_seven_form_select_options($element, $choices = NULL) {
   $show_sa = array(
     'node/add/simpleads',
+    'node/add/advertisement',
     );
 
   if (!isset($choices)) {
