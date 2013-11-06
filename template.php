@@ -23,7 +23,6 @@ function mycityinfo_seven_form_select_options($element, $choices = NULL) {
   if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) == 'edit') {
     $nid = arg(1);
     $node = node_load($nid);
-    dsm($node->type);
     if ($node->type == 'advertisement') {
       array_push($show_sa, current_path());
     }
