@@ -25,7 +25,7 @@ function mycityinfo_seven_form_select_options($element, $choices = NULL) {
     $node = node_load($nid);
     dsm($node->type);
     if ($node->type == 'advertisement') {
-      $show_sa->append(current_path());
+      array_push($show_sa, current_path());
     }
   }
 
