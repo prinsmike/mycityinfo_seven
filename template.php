@@ -18,12 +18,13 @@ function mycityinfo_seven_form_select_options($element, $choices = NULL) {
   $show_sa = array(
     'node/add/simpleads',
     'node/add/advertisement',
+    'node/add/resource',
     );
 
   if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) == 'edit') {
     $nid = arg(1);
     $node = node_load($nid);
-    if ($node->type == 'advertisement') {
+    if ($node->type == 'advertisement' || $node->type == 'resource') {
       array_push($show_sa, current_path());
     }
   }
