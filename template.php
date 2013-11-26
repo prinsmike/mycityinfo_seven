@@ -29,7 +29,7 @@ function mycityinfo_seven_form_select_options($element, $choices = NULL) {
     }
   }
 
-  if (arg(0) == 'admin' && arg(1) == 'domain' && arg(2) == 'content' && is_numeric(arg(3))) {
+  if (arg(0) == 'admin' && arg(1) == 'domain' && arg(2) == 'content') {
     array_push($show_sa, current_path());
   }
 
